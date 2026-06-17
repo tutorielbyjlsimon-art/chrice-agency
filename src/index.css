@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-400: #d6b580;
+  --color-brand-500: #cda260;
+  --color-brand-600: #b58d4e;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  
+  --color-ink: var(--color-ink-val);
+  --color-surface: var(--color-surface-val);
+}
+
+:root {
+  /* Default Dark Mode */
+  --color-ink-val: #07090e;
+  --color-surface-val: #111827;
+  --color-text-main-val: #f8fafc;
+  --color-text-muted-val: #94a3b8;
+  --color-glass-border-val: rgba(255, 255, 255, 0.08);
+  --color-glass-bg-val: rgba(17, 24, 39, 0.6);
+  --color-input-bg-val: rgba(0, 0, 0, 0.2);
+}
+
+.light-mode {
+  /* Light Mode */
+  --color-ink-val: #f1f5f9;
+  --color-surface-val: #ffffff;
+  --color-text-main-val: #0f172a;
+  --color-text-muted-val: #475569;
+  --color-glass-border-val: rgba(0, 0, 0, 0.1);
+  --color-glass-bg-val: rgba(255, 255, 255, 0.8);
+  --color-input-bg-val: rgba(255, 255, 255, 0.5);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-ink-val);
+    color: var(--color-text-main-val);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Tailwind text-white classes override color, so we need to ensure text classes respect themes where needed.
+   For simplicity in this prototype, we'll redefine some base utilities to use our variables. */
+.text-white { color: var(--color-text-main-val) !important; }
+.text-slate-300, .text-slate-400 { color: var(--color-text-muted-val) !important; }
+.border-white\/10 { border-color: var(--color-glass-border-val) !important; }
+.bg-ink { background-color: var(--color-ink-val) !important; }
+
+.glass {
+  background: var(--color-glass-bg-val);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border-val);
+}
+
+.glass-card {
+  background: var(--color-surface-val);
+  border: 1px solid var(--color-glass-border-val);
+  border-radius: 24px;
+}

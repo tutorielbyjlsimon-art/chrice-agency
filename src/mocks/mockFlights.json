@@ -1,0 +1,35 @@
+[
+  {
+    "id": "vol-001",
+    "airline": "Air France",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Air_France_Logo.svg/1024px-Air_France_Logo.svg.png",
+    "departure": { "code": "CDG", "time": "08:30" },
+    "arrival": { "code": "JFK", "time": "11:15" },
+    "duration": "8h 45m",
+    "price": 450,
+    "currency": "EUR",
+    "tags": ["Direct", "Bagage cabine inclus"]
+  },
+  {
+    "id": "vol-002",
+    "airline": "Lufthansa",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lufthansa_Logo_2018.svg/1024px-Lufthansa_Logo_2018.svg.png",
+    "departure": { "code": "CDG", "time": "10:00" },
+    "arrival": { "code": "JFK", "time": "14:30" },
+    "duration": "10h 30m",
+    "price": 380,
+    "currency": "EUR",
+    "tags": ["1 Escale"]
+  },
+  {
+    "id": "vol-003",
+    "airline": "Emirates",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1024px-Emirates_logo.svg.png",
+    "departure": { "code": "CDG", "time": "15:35" },
+    "arrival": { "code": "JFK", "time": "22:00" },
+    "duration": "12h 25m",
+    "price": 620,
+    "currency": "EUR",
+    "tags": ["1 Escale", "Premium", "Wi-Fi"]
+  }
+]
