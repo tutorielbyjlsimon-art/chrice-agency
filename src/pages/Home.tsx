@@ -44,7 +44,7 @@ export const Home = () => {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 px-4 pb-20">
         <div className="absolute inset-0 z-0">
-          <img src="/assets/hero_bg_1781704222367.jpg" alt="Hero" className="w-full h-full object-cover brightness-50" />
+          <img src="./assets/hero_bg_1781704222367.jpg" alt="Hero" className="w-full h-full object-cover brightness-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/50 to-ink"></div>
         </div>
         

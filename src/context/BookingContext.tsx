@@ -10,14 +10,16 @@ export interface Location {
 export interface Flight {
   id: string;
   airline: string;
-  airlineLogo: string;
+  airlineLogo?: string;
+  logo?: string;
+  tags?: string[];
   departure: Location;
   arrival: Location;
   duration: string;
   price: number;
   currency: string;
-  class: 'Economy' | 'Business' | 'First';
-  carbonEmission: number;
+  class?: 'Economy' | 'Business' | 'First';
+  carbonEmission?: number;
 }
 
 export type Currency = 'EUR' | 'USD' | 'GBP' | 'JPY';

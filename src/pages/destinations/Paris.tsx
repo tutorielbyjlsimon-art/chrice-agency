@@ -68,7 +68,7 @@ export const Paris = () => {
   return (
     <div className="w-full">
       <div className="relative h-[60vh] overflow-hidden mb-16 shadow-2xl">
-        <img src="/assets/dest_paris_1781704263239.jpg" alt="Paris" className="w-full h-full object-cover brightness-50" />
+        <img src="./assets/dest_paris_1781704263239.jpg" alt="Paris" className="w-full h-full object-cover brightness-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent"></div>
         <div className="absolute bottom-12 left-6 md:left-12 max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-lg">Paris, France</h1>
