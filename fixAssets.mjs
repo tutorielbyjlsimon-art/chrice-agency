@@ -22,8 +22,9 @@ const files = walk('./src');
 let changedCount = 0;
 for (const file of files) {
   const content = fs.readFileSync(file, 'utf8');
-  if (content.includes('"/assets/')) {
-    const newContent = content.replace(/"\/assets\//g, '"./assets/');
+  if (content.includes('"/assets/') || content.includes("'/assets/")) {
+    let newContent = content.replace(/"\/assets\//g, '"./assets/');
+    newContent = newContent.replace(/'\/assets\//g, "'./assets/");
     fs.writeFileSync(file, newContent);
     console.log(`Updated ${file}`);
     changedCount++;

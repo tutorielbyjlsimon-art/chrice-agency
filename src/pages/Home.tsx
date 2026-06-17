@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { Plane, Building, Car, MapPin, Calendar, Users, Search, ShieldCheck, Gem, Headset, Star } from 'lucide-react';
 
 export const destinations = [
-  { id: 'paris', name: 'Paris, France', img: '/assets/dest_paris_1781704263239.jpg', desc: 'La ville lumière vous attend pour un séjour romantique inoubliable.' },
-  { id: 'kyoto', name: 'Kyoto, Japon', img: '/assets/dest_kyoto_1781704278607.jpg', desc: "Plongez dans l'harmonie et la beauté sereine des temples ancestraux." },
-  { id: 'maldives', name: 'Les Maldives', img: '/assets/dest_maldives_1781704294035.jpg', desc: 'Bungalows luxueux sur des eaux turquoise pour une détente absolue.' },
-  { id: 'dubai', name: 'Dubaï, EAU', img: '/assets/dl_asset_1781709133130_1.jpg', desc: 'Le luxe futuriste et le shopping de classe mondiale au cœur du désert.' },
-  { id: 'newyork', name: 'New York, USA', img: '/assets/dl_asset_1781709136346_2.jpg', desc: 'La ville qui ne dort jamais, de Broadway à Central Park.' },
-  { id: 'bali', name: 'Bali, Indonésie', img: '/assets/dl_asset_1781709139379_3.jpg', desc: 'Retraite spirituelle, plages de rêve et nature luxuriante.' }
+  { id: 'paris', name: 'Paris, France', img: './assets/dest_paris_1781704263239.jpg', desc: 'La ville lumière vous attend pour un séjour romantique inoubliable.' },
+  { id: 'kyoto', name: 'Kyoto, Japon', img: './assets/dest_kyoto_1781704278607.jpg', desc: "Plongez dans l'harmonie et la beauté sereine des temples ancestraux." },
+  { id: 'maldives', name: 'Les Maldives', img: './assets/dest_maldives_1781704294035.jpg', desc: 'Bungalows luxueux sur des eaux turquoise pour une détente absolue.' },
+  { id: 'dubai', name: 'Dubaï, EAU', img: './assets/dl_asset_1781709133130_1.jpg', desc: 'Le luxe futuriste et le shopping de classe mondiale au cœur du désert.' },
+  { id: 'newyork', name: 'New York, USA', img: './assets/dl_asset_1781709136346_2.jpg', desc: 'La ville qui ne dort jamais, de Broadway à Central Park.' },
+  { id: 'bali', name: 'Bali, Indonésie', img: './assets/dl_asset_1781709139379_3.jpg', desc: 'Retraite spirituelle, plages de rêve et nature luxuriante.' }
 ];
 
 export const Home = () => {

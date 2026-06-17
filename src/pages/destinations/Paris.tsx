@@ -6,10 +6,10 @@ import { Calendar as CalendarIcon, Users, MapPin, Plane, CheckCircle, Sparkles, 
 import mockFlights from '../../mocks/mockFlights.json';
 
 const hotels = [
-  { id: 'h1', name: 'Le Meurice', stars: 5, price: 290, rating: 9.8, reviews: 342, img: '/assets/paris_1.jpg', desc: "Face aux Tuileries, un palace à l'élégance du 18e siècle avec spa et gastronomie d'exception.", amenities: ['Douche effet pluie en marbre', 'TV 8K Invisible', 'Lit King Size sur-mesure'] },
-  { id: 'h2', name: 'Plaza Athénée', stars: 5, price: 350, rating: 9.9, reviews: 512, img: '/assets/paris_2.jpg', desc: "Le chic de la Haute Couture avenue Montaigne, avec une vue spectaculaire sur la Tour Eiffel.", amenities: ['Balcon privé Tour Eiffel', 'Produits de courtoisie Dior', 'Miroir TV intégré'] },
-  { id: 'h3', name: 'Hôtel Lutetia', stars: 5, price: 180, rating: 9.4, reviews: 189, img: '/assets/paris_3.jpg', desc: "La légende de la Rive Gauche, alliant architecture Art Déco et design ultra-contemporain.", amenities: ['Baignoire en marbre sculpté', 'Machine Nespresso Vertuo', 'Linge de maison en satin'] },
-  { id: 'h4', name: 'The Peninsula Paris', stars: 5, price: 220, rating: 9.6, reviews: 275, img: '/assets/paris_4.jpg', desc: "Le luxe absolu à deux pas de l'Arc de Triomphe, avec terrasses panoramiques secrètes.", amenities: ['Domotique iPad', 'Toilettes japonaises Toto', 'Dressing privatif'] }
+  { id: 'h1', name: 'Le Meurice', stars: 5, price: 290, rating: 9.8, reviews: 342, img: './assets/paris_1.jpg', desc: "Face aux Tuileries, un palace à l'élégance du 18e siècle avec spa et gastronomie d'exception.", amenities: ['Douche effet pluie en marbre', 'TV 8K Invisible', 'Lit King Size sur-mesure'] },
+  { id: 'h2', name: 'Plaza Athénée', stars: 5, price: 350, rating: 9.9, reviews: 512, img: './assets/paris_2.jpg', desc: "Le chic de la Haute Couture avenue Montaigne, avec une vue spectaculaire sur la Tour Eiffel.", amenities: ['Balcon privé Tour Eiffel', 'Produits de courtoisie Dior', 'Miroir TV intégré'] },
+  { id: 'h3', name: 'Hôtel Lutetia', stars: 5, price: 180, rating: 9.4, reviews: 189, img: './assets/paris_3.jpg', desc: "La légende de la Rive Gauche, alliant architecture Art Déco et design ultra-contemporain.", amenities: ['Baignoire en marbre sculpté', 'Machine Nespresso Vertuo', 'Linge de maison en satin'] },
+  { id: 'h4', name: 'The Peninsula Paris', stars: 5, price: 220, rating: 9.6, reviews: 275, img: './assets/paris_4.jpg', desc: "Le luxe absolu à deux pas de l'Arc de Triomphe, avec terrasses panoramiques secrètes.", amenities: ['Domotique iPad', 'Toilettes japonaises Toto', 'Dressing privatif'] }
 ];
 
 const excursions = [

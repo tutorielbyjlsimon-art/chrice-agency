@@ -6,10 +6,10 @@ import { Calendar as CalendarIcon, Users, MapPin, Plane, CheckCircle, Sparkles, 
 import mockFlights from '../../mocks/mockFlights.json';
 
 const hotels = [
-  { id: 'n1', name: 'The Plaza Hotel', stars: 5, price: 210, rating: 9.5, reviews: 3120, img: '/assets/ny_1.jpg', desc: "L'institution new-yorkaise par excellence face à Central Park.", amenities: ['Vue Central Park', 'Sèche-cheveux Dyson', 'Literie Frette'] },
-  { id: 'n2', name: 'YOTEL New York', stars: 4, price: 110, rating: 8.9, reviews: 5400, img: '/assets/ny_2.jpg', desc: "Design intelligent et moderne en plein cœur de Manhattan à prix doux.", amenities: ['Smartbed ajustable', 'Douche mousson', 'Rooftop panoramique'] },
-  { id: 'n3', name: 'Arlo SoHo', stars: 4, price: 140, rating: 9.1, reviews: 2200, img: '/assets/ny_3.jpg', desc: "Micro-hôtel design avec un esprit boutique au cœur du bouillonnant SoHo.", amenities: ['Vélos gratuits', 'Cour intérieure privée', 'Produits apothicaires'] },
-  { id: 'n4', name: 'citizenM Times Square', stars: 4, price: 130, rating: 9.3, reviews: 4800, img: '/assets/ny_4.jpg', desc: "Un luxe abordable pour les voyageurs modernes à deux pas de Times Square.", amenities: ['Contrôle via iPad', 'Films gratuits', 'Lobby façon salon design'] }
+  { id: 'n1', name: 'The Plaza Hotel', stars: 5, price: 210, rating: 9.5, reviews: 3120, img: './assets/ny_1.jpg', desc: "L'institution new-yorkaise par excellence face à Central Park.", amenities: ['Vue Central Park', 'Sèche-cheveux Dyson', 'Literie Frette'] },
+  { id: 'n2', name: 'YOTEL New York', stars: 4, price: 110, rating: 8.9, reviews: 5400, img: './assets/ny_2.jpg', desc: "Design intelligent et moderne en plein cœur de Manhattan à prix doux.", amenities: ['Smartbed ajustable', 'Douche mousson', 'Rooftop panoramique'] },
+  { id: 'n3', name: 'Arlo SoHo', stars: 4, price: 140, rating: 9.1, reviews: 2200, img: './assets/ny_3.jpg', desc: "Micro-hôtel design avec un esprit boutique au cœur du bouillonnant SoHo.", amenities: ['Vélos gratuits', 'Cour intérieure privée', 'Produits apothicaires'] },
+  { id: 'n4', name: 'citizenM Times Square', stars: 4, price: 130, rating: 9.3, reviews: 4800, img: './assets/ny_4.jpg', desc: "Un luxe abordable pour les voyageurs modernes à deux pas de Times Square.", amenities: ['Contrôle via iPad', 'Films gratuits', 'Lobby façon salon design'] }
 ];
 
 const excursions = [

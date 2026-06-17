@@ -6,10 +6,10 @@ import { Calendar as CalendarIcon, Users, MapPin, Plane, CheckCircle, Sparkles, 
 import mockFlights from '../../mocks/mockFlights.json';
 
 const hotels = [
-  { id: 'd1', name: 'Atlantis The Royal', stars: 5, price: 250, rating: 9.8, reviews: 1420, img: '/assets/dubai_1.jpg', desc: "L'icône architecturale de Dubaï avec piscines suspendues et luxe futuriste.", amenities: ['Piscine à débordement', 'Baignoire panoramique', 'Plage privée'] },
-  { id: 'd2', name: 'Burj Al Arab Jumeirah', stars: 5, price: 350, rating: 9.9, reviews: 890, img: '/assets/dubai_2.jpg', desc: "Le seul hôtel 7 étoiles au monde. Une expérience de grandeur inégalée.", amenities: ['Majordome personnel', 'iPad en or 24 carats', 'Accès héliport'] },
-  { id: 'd3', name: 'Address Downtown', stars: 5, price: 180, rating: 9.4, reviews: 650, img: '/assets/dubai_3.jpg', desc: "Le summum du chic urbain avec une vue imprenable sur le Burj Khalifa.", amenities: ['Vue directe Burj Khalifa', 'Spa holistique', 'Accès direct au Mall'] },
-  { id: 'd4', name: 'One&Only The Palm', stars: 5, price: 210, rating: 9.6, reviews: 420, img: '/assets/dubai_4.jpg', desc: "Un sanctuaire intime de tranquillité sur la péninsule de Palm Jumeirah.", amenities: ['Villa avec piscine', 'Cuisine étoilée', 'Service VIP'] }
+  { id: 'd1', name: 'Atlantis The Royal', stars: 5, price: 250, rating: 9.8, reviews: 1420, img: './assets/dubai_1.jpg', desc: "L'icône architecturale de Dubaï avec piscines suspendues et luxe futuriste.", amenities: ['Piscine à débordement', 'Baignoire panoramique', 'Plage privée'] },
+  { id: 'd2', name: 'Burj Al Arab Jumeirah', stars: 5, price: 350, rating: 9.9, reviews: 890, img: './assets/dubai_2.jpg', desc: "Le seul hôtel 7 étoiles au monde. Une expérience de grandeur inégalée.", amenities: ['Majordome personnel', 'iPad en or 24 carats', 'Accès héliport'] },
+  { id: 'd3', name: 'Address Downtown', stars: 5, price: 180, rating: 9.4, reviews: 650, img: './assets/dubai_3.jpg', desc: "Le summum du chic urbain avec une vue imprenable sur le Burj Khalifa.", amenities: ['Vue directe Burj Khalifa', 'Spa holistique', 'Accès direct au Mall'] },
+  { id: 'd4', name: 'One&Only The Palm', stars: 5, price: 210, rating: 9.6, reviews: 420, img: './assets/dubai_4.jpg', desc: "Un sanctuaire intime de tranquillité sur la péninsule de Palm Jumeirah.", amenities: ['Villa avec piscine', 'Cuisine étoilée', 'Service VIP'] }
 ];
 
 const excursions = [

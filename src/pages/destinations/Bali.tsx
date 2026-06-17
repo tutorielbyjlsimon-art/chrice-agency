@@ -6,10 +6,10 @@ import { Calendar as CalendarIcon, Users, MapPin, Plane, CheckCircle, Sparkles, 
 import mockFlights from '../../mocks/mockFlights.json';
 
 const hotels = [
-  { id: 'b1', name: 'Ubud Hanging Gardens', stars: 5, price: 180, rating: 9.7, reviews: 2150, img: '/assets/bali_1.jpg', desc: "Immergé dans la jungle tropicale, célèbre pour ses piscines à débordement suspendues.", amenities: ['Piscine cascade privée', 'Lit à baldaquin', 'Douche ciel ouvert'] },
-  { id: 'b2', name: 'The Edge Uluwatu', stars: 5, price: 250, rating: 9.8, reviews: 1100, img: '/assets/bali_2.jpg', desc: "Perché sur une falaise spectaculaire offrant une vue plongeante sur l'océan Indien.", amenities: ['Majordome attitré', 'Plancher de verre', 'Spa Cliff'] },
-  { id: 'b3', name: 'Potato Head Suites', stars: 4, price: 120, rating: 9.3, reviews: 3400, img: '/assets/bali_3.jpg', desc: "L'art de vivre éco-responsable et branché en plein cœur de Seminyak.", amenities: ['Bar cocktail en chambre', 'Accès direct Beach Club', 'Design éthique'] },
-  { id: 'b4', name: 'Padma Resort Ubud', stars: 4, price: 95, rating: 9.6, reviews: 4800, img: '/assets/bali_4.jpg', desc: "Un havre de paix familial avec la plus grande piscine chauffée de Bali.", amenities: ['Piscine 89 mètres', 'Club enfant inclus', 'Balcon panoramique'] }
+  { id: 'b1', name: 'Ubud Hanging Gardens', stars: 5, price: 180, rating: 9.7, reviews: 2150, img: './assets/bali_1.jpg', desc: "Immergé dans la jungle tropicale, célèbre pour ses piscines à débordement suspendues.", amenities: ['Piscine cascade privée', 'Lit à baldaquin', 'Douche ciel ouvert'] },
+  { id: 'b2', name: 'The Edge Uluwatu', stars: 5, price: 250, rating: 9.8, reviews: 1100, img: './assets/bali_2.jpg', desc: "Perché sur une falaise spectaculaire offrant une vue plongeante sur l'océan Indien.", amenities: ['Majordome attitré', 'Plancher de verre', 'Spa Cliff'] },
+  { id: 'b3', name: 'Potato Head Suites', stars: 4, price: 120, rating: 9.3, reviews: 3400, img: './assets/bali_3.jpg', desc: "L'art de vivre éco-responsable et branché en plein cœur de Seminyak.", amenities: ['Bar cocktail en chambre', 'Accès direct Beach Club', 'Design éthique'] },
+  { id: 'b4', name: 'Padma Resort Ubud', stars: 4, price: 95, rating: 9.6, reviews: 4800, img: './assets/bali_4.jpg', desc: "Un havre de paix familial avec la plus grande piscine chauffée de Bali.", amenities: ['Piscine 89 mètres', 'Club enfant inclus', 'Balcon panoramique'] }
 ];
 
 const excursions = [
