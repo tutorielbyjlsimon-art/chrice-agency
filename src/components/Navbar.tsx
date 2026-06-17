@@ -48,11 +48,6 @@ export const Navbar = () => {
           <button onClick={() => setIsLight(!isLight)} className="p-1 sm:p-2 hover:text-brand-500 transition-colors rounded-full bg-white/5 mx-1 sm:mx-2" title="Basculer le thème">
             {isLight ? <Moon size={16} className="sm:w-[20px] sm:h-[20px]" /> : <Sun size={16} className="sm:w-[20px] sm:h-[20px]" />}
           </button>
-          
-          <span className="text-sm font-bold text-brand-500 hidden md:block">Espace Premium</span>
-          <button className="p-1 sm:p-2 hover:text-brand-500 transition-colors rounded-full bg-white/5">
-            <User size={16} className="sm:w-[20px] sm:h-[20px]" />
-          </button>
         </div>
       </div>
     </nav>

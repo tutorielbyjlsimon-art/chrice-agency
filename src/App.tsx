@@ -3,7 +3,6 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { BookingProvider } from './context/BookingContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { DebugMenu } from './components/DebugMenu';
 import ScrollToTop from './components/ScrollToTop';
 import { Home } from './pages/Home';
 import { Checkout } from './pages/Checkout';
@@ -49,7 +48,6 @@ function App() {
             </Routes>
           </div>
           <Footer />
-          <DebugMenu />
         </div>
       </HashRouter>
     </BookingProvider>
