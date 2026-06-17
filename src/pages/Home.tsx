@@ -20,6 +20,21 @@ export const Home = () => {
   const [searchDest, setSearchDest] = useState('');
   const [tripType, setTripType] = useState('aller-retour');
 
+  // Dates handling
+  const today = new Date().toISOString().split('T')[0];
+  const maxRes = new Date();
+  maxRes.setFullYear(maxRes.getFullYear() + 1);
+  const maxReservationDate = maxRes.toISOString().split('T')[0];
+
+  const [dateAller, setDateAller] = useState(today);
+  
+  // Calculate max return date (6 months after dateAller)
+  const maxRet = new Date(dateAller);
+  maxRet.setMonth(maxRet.getMonth() + 6);
+  const maxRetourDate = maxRet.toISOString().split('T')[0];
+  
+  const [dateRetour, setDateRetour] = useState('');
+
   useEffect(() => {
     fetch('https://ipapi.co/json/')
       .then(res => res.json())
@@ -57,15 +72,15 @@ export const Home = () => {
 
         {/* Booking.com Style Search Box */}
         <div className="z-10 w-full max-w-5xl bg-surface/80 backdrop-blur-xl border border-white/10 rounded-3xl p-4 md:p-6 shadow-2xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 border-b border-white/10 pb-4 gap-4">
-            <div className="flex gap-2">
-              <button onClick={() => setActiveTab('vols')} className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-colors ${activeTab === 'vols' ? 'bg-brand-500 text-ink' : 'text-slate-300 hover:bg-white/10'}`}><Plane size={20}/> Vols</button>
-              <button onClick={() => setActiveTab('hotels')} className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-colors ${activeTab === 'hotels' ? 'bg-brand-500 text-ink' : 'text-slate-300 hover:bg-white/10'}`}><Building size={20}/> Hôtels</button>
-              <button onClick={() => setActiveTab('voitures')} className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-colors ${activeTab === 'voitures' ? 'bg-brand-500 text-ink' : 'text-slate-300 hover:bg-white/10'}`}><Car size={20}/> Voitures</button>
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-6 border-b border-white/10 pb-4 gap-4">
+            <div className="flex flex-wrap sm:flex-nowrap gap-2 w-full lg:w-auto">
+              <button onClick={() => setActiveTab('vols')} className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-full font-bold transition-colors text-sm whitespace-nowrap ${activeTab === 'vols' ? 'bg-brand-500 text-ink' : 'text-slate-300 hover:bg-white/10'}`}><Plane size={18}/> Vols</button>
+              <button onClick={() => setActiveTab('hotels')} className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-full font-bold transition-colors text-sm whitespace-nowrap ${activeTab === 'hotels' ? 'bg-brand-500 text-ink' : 'text-slate-300 hover:bg-white/10'}`}><Building size={18}/> Hôtels</button>
+              <button onClick={() => setActiveTab('voitures')} className={`flex-1 flex justify-center items-center gap-2 px-4 py-3 rounded-full font-bold transition-colors text-sm whitespace-nowrap ${activeTab === 'voitures' ? 'bg-brand-500 text-ink' : 'text-slate-300 hover:bg-white/10'}`}><Car size={18}/> Voitures</button>
             </div>
             
             {/* Trip Type Toggle */}
-            <div className="flex items-center gap-6 px-4">
+            <div className="flex items-center gap-4 sm:gap-6 px-2 w-full lg:w-auto justify-start sm:justify-center">
               <label className="flex items-center gap-2 text-sm font-bold text-white cursor-pointer group">
                 <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${tripType === 'aller-retour' ? 'border-brand-500' : 'border-slate-400 group-hover:border-brand-500'}`}>
                   {tripType === 'aller-retour' && <div className="w-2.5 h-2.5 bg-brand-500 rounded-full"></div>}
@@ -92,27 +107,27 @@ export const Home = () => {
               </div>
             </div>
             
-            <div className="flex-1 glass flex items-center px-4 py-3 rounded-2xl">
-              <Calendar className="text-brand-500 mr-3" size={24} />
-              <div className="w-full flex gap-2">
-                <div className="flex-1">
-                  <label className="block text-xs font-bold text-slate-400">Aller</label>
-                  <input type="date" required className="w-full bg-transparent text-white outline-none font-bold text-lg [color-scheme:dark]" />
+            <div className="flex-1 glass flex items-center px-3 sm:px-4 py-3 rounded-2xl">
+              <Calendar className="text-brand-500 mr-2 sm:mr-3 shrink-0" size={24} />
+              <div className="w-full flex flex-col sm:flex-row gap-2 sm:gap-4 overflow-hidden">
+                <div className="flex-1 min-w-0">
+                  <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Aller</label>
+                  <input type="date" value={dateAller} min={today} max={maxReservationDate} onChange={e => setDateAller(e.target.value)} required className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-lg [color-scheme:dark]" />
                 </div>
                 {tripType === 'aller-retour' && (
-                  <div className="flex-1 border-l border-white/10 pl-2">
-                    <label className="block text-xs font-bold text-slate-400">Retour</label>
-                    <input type="date" required className="w-full bg-transparent text-white outline-none font-bold text-lg [color-scheme:dark]" />
+                  <div className="flex-1 border-t sm:border-t-0 sm:border-l border-white/10 pt-2 sm:pt-0 sm:pl-4 min-w-0">
+                    <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Retour (max 6 mois)</label>
+                    <input type="date" value={dateRetour} min={dateAller} max={maxRetourDate} onChange={e => setDateRetour(e.target.value)} required className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-lg [color-scheme:dark]" />
                   </div>
                 )}
               </div>
             </div>
 
-            <div className="glass flex items-center px-4 py-3 rounded-2xl md:w-48">
-              <Users className="text-brand-500 mr-3" size={24} />
+            <div className="glass flex items-center px-3 sm:px-4 py-3 rounded-2xl md:w-48">
+              <Users className="text-brand-500 mr-2 sm:mr-3 shrink-0" size={24} />
               <div className="w-full">
-                <label className="block text-xs font-bold text-slate-400">Passagers</label>
-                <input type="number" min="1" defaultValue="2" className="w-full bg-transparent text-white outline-none font-bold text-lg" />
+                <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Passagers</label>
+                <input type="number" min="1" defaultValue="2" className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-lg" />
               </div>
             </div>
 
