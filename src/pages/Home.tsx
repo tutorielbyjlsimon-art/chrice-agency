@@ -116,7 +116,7 @@ export const Home = () => {
                 </div>
                 {tripType === 'aller-retour' && (
                   <div className="flex-1 border-t sm:border-t-0 sm:border-l border-white/10 pt-2 sm:pt-0 sm:pl-4 min-w-0">
-                    <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Retour (max 6 mois)</label>
+                    <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Retour</label>
                     <input type="date" value={dateRetour} min={dateAller} max={maxRetourDate} onChange={e => setDateRetour(e.target.value)} required className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-lg [color-scheme:dark]" />
                   </div>
                 )}
