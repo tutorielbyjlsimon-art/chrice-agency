@@ -48,7 +48,7 @@ export const Home = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if(searchDest) {
-      const found = destinations.find(d => d.name.toLowerCase().includes(searchDest.toLowerCase()));
+      const found = destinations.find(d => d.id === searchDest);
       if (found) navigate(`/destination/${found.id}?type=${tripType}`);
       else navigate(`/destination/paris?type=${tripType}`);
     }
@@ -100,10 +100,15 @@ export const Home = () => {
 
           <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 glass flex items-center px-4 py-3 rounded-2xl">
-              <MapPin className="text-brand-500 mr-3" size={24} />
-              <div className="w-full">
-                <label className="block text-xs font-bold text-slate-400">Destination</label>
-                <input type="text" value={searchDest} onChange={e => setSearchDest(e.target.value)} placeholder="Où allez-vous ?" className="w-full bg-transparent text-white outline-none placeholder:text-slate-500 font-bold text-lg" required />
+              <MapPin className="text-brand-500 mr-3 shrink-0" size={24} />
+              <div className="w-full min-w-0">
+                <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Destination</label>
+                <select value={searchDest} onChange={e => setSearchDest(e.target.value)} required className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-lg appearance-none cursor-pointer [color-scheme:dark]">
+                  <option className="bg-ink text-white" value="" disabled>Choisissez une destination</option>
+                  {destinations.map(d => (
+                    <option key={d.id} className="bg-ink text-white" value={d.id}>{d.name}</option>
+                  ))}
+                </select>
               </div>
             </div>
             
