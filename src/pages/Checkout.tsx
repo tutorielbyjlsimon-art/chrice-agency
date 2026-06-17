@@ -55,7 +55,7 @@ export const Checkout = () => {
     }, 2000);
   };
 
-  const isFormValid = firstName && lastName && email && cardNumber.length >= 15 && expiry.length >= 5 && cvv.length >= 3 && !emailError;
+  const isFormValid = firstName && lastName && email && cardNumber.replace(/\s/g, '').length === 16 && expiry.length === 5 && cvv.length >= 3 && !emailError;
 
   return (
     <div className="w-full max-w-5xl mx-auto px-6 mt-10">
@@ -113,17 +113,28 @@ export const Checkout = () => {
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-slate-400 mb-2">Numéro de carte factice <span className="text-red-500">*</span></label>
-                  <input required type="text" value={cardNumber} onChange={e => setCardNumber(e.target.value)} className="w-full glass rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors tracking-widest" placeholder="0000 0000 0000 0000" />
+                  <input required type="text" maxLength={19} value={cardNumber} onChange={e => {
+                    let v = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                    let formatted = v.match(/.{1,4}/g)?.join(' ') || v;
+                    setCardNumber(formatted);
+                  }} className="w-full glass rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors tracking-widest" placeholder="0000 0000 0000 0000" />
                 </div>
                 
                 <div className="grid grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-slate-400 mb-2">Expiration <span className="text-red-500">*</span></label>
-                    <input required type="text" value={expiry} onChange={e => setExpiry(e.target.value)} placeholder="MM/AA" className="w-full glass rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" />
+                    <input required type="text" maxLength={5} value={expiry} onChange={e => {
+                      let v = e.target.value.replace(/[^0-9]/g, '');
+                      if (v.length >= 2) v = v.slice(0, 2) + '/' + v.slice(2);
+                      setExpiry(v);
+                    }} placeholder="MM/AA" className="w-full glass rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" />
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-slate-400 mb-2">CVV <span className="text-red-500">*</span></label>
-                    <input required type="text" value={cvv} onChange={e => setCvv(e.target.value)} placeholder="123" className="w-full glass rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" />
+                    <input required type="text" maxLength={4} value={cvv} onChange={e => {
+                      let v = e.target.value.replace(/[^0-9]/g, '');
+                      setCvv(v);
+                    }} placeholder="123" className="w-full glass rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors" />
                   </div>
                 </div>
               </div>

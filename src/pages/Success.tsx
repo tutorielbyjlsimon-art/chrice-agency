@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useBooking } from '../context/BookingContext';
 import { CheckCircle, Download, ArrowRight, Calendar, MapPin } from 'lucide-react';
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 export const Success = () => {
   const { state, formatPrice } = useBooking();
@@ -15,6 +17,67 @@ export const Success = () => {
       </div>
     );
   }
+
+  const downloadInvoice = () => {
+    const doc = new jsPDF();
+    
+    // Header
+    doc.setFontSize(22);
+    doc.setTextColor(205, 162, 96);
+    doc.text('CHRICE AGENCY', 105, 20, { align: 'center' });
+    
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text('Facture / Réservation Officielle', 105, 28, { align: 'center' });
+    doc.text(`PNR: ${pnr}`, 105, 34, { align: 'center' });
+    
+    // Client Info
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text('Facturé à :', 20, 50);
+    doc.setFontSize(10);
+    doc.text(`${state.passengerInfo.firstName} ${state.passengerInfo.lastName}`, 20, 58);
+    doc.text(`${state.passengerInfo.email}`, 20, 64);
+    
+    // Table
+    (doc as any).autoTable({
+      startY: 75,
+      head: [['Vol / Destination', 'Passagers', 'Classe', 'Total']],
+      body: [
+        [
+          `${state.selectedFlight.departure.code} -> ${state.selectedFlight.arrival.code}`,
+          state.searchParams?.passengers || 2,
+          'Premium VIP',
+          formatPrice(state.selectedFlight.price)
+        ]
+      ],
+      headStyles: { fillColor: [205, 162, 96] },
+    });
+    
+    // Footer - Call To Action
+    const finalY = (doc as any).lastAutoTable.finalY || 120;
+    
+    doc.setFillColor(245, 245, 245);
+    doc.rect(20, finalY + 20, 170, 50, 'F');
+    
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text('INTÉRESSÉ PAR CE PROJET ?', 105, finalY + 30, { align: 'center' });
+    
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text('Si vous recherchez un développeur ou si ce projet vous a plu, contactez-moi :', 105, finalY + 38, { align: 'center' });
+    
+    doc.setFontSize(11);
+    doc.setTextColor(205, 162, 96);
+    doc.text('J.Linaharison Chrice', 105, finalY + 48, { align: 'center' });
+    
+    doc.setTextColor(0, 0, 0);
+    doc.text('Tél : +261 38 86 293 07', 105, finalY + 54, { align: 'center' });
+    doc.text('Email : jaozaratianalinaharisonchrice@gmail.com', 105, finalY + 60, { align: 'center' });
+    
+    doc.save(`Facture_ChriceAgency_${pnr}.pdf`);
+  };
 
   return (
     <div className="w-full max-w-3xl mx-auto px-6 text-center py-10">
@@ -79,8 +142,8 @@ export const Success = () => {
       </div>
 
       <div className="flex flex-col sm:flex-row gap-6 justify-center">
-        <button className="flex items-center justify-center gap-2 bg-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-colors backdrop-blur-md">
-          <Download size={20} /> Télécharger la Facture
+        <button onClick={downloadInvoice} className="flex items-center justify-center gap-2 bg-white/10 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-colors backdrop-blur-md">
+          <Download size={20} /> Télécharger la Facture PDF
         </button>
         <Link to="/" className="flex items-center justify-center gap-2 bg-brand-500 text-ink px-8 py-4 rounded-full font-bold hover:bg-brand-400 transition-all hover:-translate-y-1 shadow-lg">
           Retour à l'accueil <ArrowRight size={20} />
