@@ -52,11 +52,17 @@ export const Paris = () => {
     else setSelectedExcursions([...selectedExcursions, id]);
   };
 
+  
+  let nights = 3;
+  if (dateAller && dateRetour && tripType === 'aller-retour') {
+    const diff = Math.ceil((new Date(dateRetour).getTime() - new Date(dateAller).getTime()) / (1000 * 60 * 60 * 24));
+    if (diff > 0) nights = diff;
+  }
   const baseFlightPrice = tripType === 'aller-retour' ? 150 : 90;
   const flightTotal = baseFlightPrice * passengers;
   const hotelPrice = selectedHotel ? hotels.find(h => h.id === selectedHotel)!.price : 0;
-  const hotelTotal = hotelPrice * 3; 
-  const mealTotal = mealPlan * 3 * passengers;
+  const hotelTotal = hotelPrice * nights; 
+  const mealTotal = mealPlan * nights * passengers;
   const excursionsTotal = selectedExcursions.reduce((acc, id) => acc + (excursions.find(e => e.id === id)!.price * passengers), 0);
   const totalPrice = flightTotal + hotelTotal + mealTotal + excursionsTotal;
 
@@ -188,7 +194,7 @@ export const Paris = () => {
                 <h4 className="font-bold text-white mb-4 border-b border-white/10 pb-2">Devis Estimé</h4>
                 <div className="space-y-2 text-sm mb-4">
                   <div className="flex justify-between"><span className="text-slate-400">Vols ({passengers}x)</span><span className="text-white">{formatPrice(flightTotal)}</span></div>
-                  <div className="flex justify-between"><span className="text-slate-400">Hôtel (3 nuits)</span><span className="text-white">{selectedHotel ? formatPrice(hotelTotal) : '-'}</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Hôtel ({nights} nuit{nights > 1 ? 's' : ''})</span><span className="text-white">{selectedHotel ? formatPrice(hotelTotal) : '-'}</span></div>
                   <div className="flex justify-between"><span className="text-slate-400">Repas</span><span className="text-white">{formatPrice(mealTotal)}</span></div>
                   <div className="flex justify-between"><span className="text-slate-400">Excursions</span><span className="text-white">{formatPrice(excursionsTotal)}</span></div>
                 </div>
