@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { Plane, Building, Car, MapPin, Calendar, Users, Search, ShieldCheck, Gem, Headset, Star } from 'lucide-react';
 
 export const destinations = [
-  { id: 'paris', name: 'Paris, France', img: './assets/dest_paris_1781704263239.jpg', desc: 'La ville lumière vous attend pour un séjour romantique inoubliable.' },
-  { id: 'kyoto', name: 'Kyoto, Japon', img: './assets/dest_kyoto_1781704278607.jpg', desc: "Plongez dans l'harmonie et la beauté sereine des temples ancestraux." },
-  { id: 'maldives', name: 'Les Maldives', img: './assets/dest_maldives_1781704294035.jpg', desc: 'Bungalows luxueux sur des eaux turquoise pour une détente absolue.' },
-  { id: 'dubai', name: 'Dubaï, EAU', img: './assets/dl_asset_1781709133130_1.jpg', desc: 'Le luxe futuriste et le shopping de classe mondiale au cœur du désert.' },
-  { id: 'newyork', name: 'New York, USA', img: './assets/dl_asset_1781709136346_2.jpg', desc: 'La ville qui ne dort jamais, de Broadway à Central Park.' },
-  { id: 'bali', name: 'Bali, Indonésie', img: './assets/dl_asset_1781709139379_3.jpg', desc: 'Retraite spirituelle, plages de rêve et nature luxuriante.' }
+  { id: 'paris', name: 'Paris, France', img: '/chrice-agency/assets/dest_paris_1781704263239.jpg', desc: 'La ville lumière vous attend pour un séjour romantique inoubliable.' },
+  { id: 'kyoto', name: 'Kyoto, Japon', img: '/chrice-agency/assets/dest_kyoto_1781704278607.jpg', desc: "Plongez dans l'harmonie et la beauté sereine des temples ancestraux." },
+  { id: 'maldives', name: 'Les Maldives', img: '/chrice-agency/assets/dest_maldives_1781704294035.jpg', desc: 'Bungalows luxueux sur des eaux turquoise pour une détente absolue.' },
+  { id: 'dubai', name: 'Dubaï, EAU', img: '/chrice-agency/assets/dl_asset_1781709133130_1.jpg', desc: 'Le luxe futuriste et le shopping de classe mondiale au cœur du désert.' },
+  { id: 'newyork', name: 'New York, USA', img: '/chrice-agency/assets/dl_asset_1781709136346_2.jpg', desc: 'La ville qui ne dort jamais, de Broadway à Central Park.' },
+  { id: 'bali', name: 'Bali, Indonésie', img: '/chrice-agency/assets/dl_asset_1781709139379_3.jpg', desc: 'Retraite spirituelle, plages de rêve et nature luxuriante.' }
 ];
 
 export const Home = () => {
@@ -44,7 +44,7 @@ export const Home = () => {
       {/* Hero */}
       <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 px-4 pb-20">
         <div className="absolute inset-0 z-0">
-          <img src="./assets/hero_bg_1781704222367.jpg" alt="Hero" className="w-full h-full object-cover brightness-50" />
+          <img src="/chrice-agency/assets/hero_bg_1781704222367.jpg" alt="Hero" className="w-full h-full object-cover brightness-50" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-ink/50 to-ink"></div>
         </div>
         

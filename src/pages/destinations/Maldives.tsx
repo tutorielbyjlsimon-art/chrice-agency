@@ -6,10 +6,10 @@ import { Calendar as CalendarIcon, Users, MapPin, Plane, CheckCircle, Sparkles, 
 import mockFlights from '../../mocks/mockFlights.json';
 
 const hotels = [
-  { id: 'm1', name: 'Soneva Jani', stars: 5, price: 420, rating: 9.8, reviews: 290, img: './assets/maldives_1.jpg', desc: "Des villas sur pilotis iconiques avec toboggan privé descendant directement dans l'océan Indien.", amenities: ['Toboggan aquatique privé', 'Sol en verre transparent', 'Toit rétractable étoiles'] },
-  { id: 'm2', name: 'One&Only Reethi Rah', stars: 5, price: 350, rating: 9.7, reviews: 450, img: './assets/maldives_2.jpg', desc: "L'intimité ultime sur l'une des plus grandes îles privées des Maldives. Luxe garanti.", amenities: ['Piscine à débordement privée', 'Majordome 24/7', 'Douche extérieure jungle'] },
-  { id: 'm3', name: 'Cheval Blanc Randheli', stars: 5, price: 550, rating: 9.9, reviews: 150, img: './assets/maldives_3.jpg', desc: "L'art de recevoir à la française au cœur de l'atoll de Noonu. Design spectaculaire.", amenities: ['Spa insulaire privé', 'Plage de sable fin privée', 'Baignoire îlot sculptée'] },
-  { id: 'm4', name: 'Gili Lankanfushi', stars: 5, price: 280, rating: 9.6, reviews: 820, img: './assets/maldives_4.jpg', desc: "Le sanctuaire écologique 'No news, no shoes'. Une reconnexion totale avec la nature.", amenities: ['Hamac suspendu sur l\'eau', 'Baignoire semi-extérieure', 'Design écologique Premium'] }
+  { id: 'm1', name: 'Soneva Jani', stars: 5, price: 420, rating: 9.8, reviews: 290, img: '/chrice-agency/assets/maldives_1.jpg', desc: "Des villas sur pilotis iconiques avec toboggan privé descendant directement dans l'océan Indien.", amenities: ['Toboggan aquatique privé', 'Sol en verre transparent', 'Toit rétractable étoiles'] },
+  { id: 'm2', name: 'One&Only Reethi Rah', stars: 5, price: 350, rating: 9.7, reviews: 450, img: '/chrice-agency/assets/maldives_2.jpg', desc: "L'intimité ultime sur l'une des plus grandes îles privées des Maldives. Luxe garanti.", amenities: ['Piscine à débordement privée', 'Majordome 24/7', 'Douche extérieure jungle'] },
+  { id: 'm3', name: 'Cheval Blanc Randheli', stars: 5, price: 550, rating: 9.9, reviews: 150, img: '/chrice-agency/assets/maldives_3.jpg', desc: "L'art de recevoir à la française au cœur de l'atoll de Noonu. Design spectaculaire.", amenities: ['Spa insulaire privé', 'Plage de sable fin privée', 'Baignoire îlot sculptée'] },
+  { id: 'm4', name: 'Gili Lankanfushi', stars: 5, price: 280, rating: 9.6, reviews: 820, img: '/chrice-agency/assets/maldives_4.jpg', desc: "Le sanctuaire écologique 'No news, no shoes'. Une reconnexion totale avec la nature.", amenities: ['Hamac suspendu sur l\'eau', 'Baignoire semi-extérieure', 'Design écologique Premium'] }
 ];
 
 const excursions = [
@@ -68,7 +68,7 @@ export const Maldives = () => {
   return (
     <div className="w-full">
       <div className="relative h-[60vh] overflow-hidden mb-16 shadow-2xl">
-        <img src="./assets/dest_maldives_1781704294035.jpg" alt="Maldives" className="w-full h-full object-cover brightness-50" />
+        <img src="/chrice-agency/assets/dest_maldives_1781704294035.jpg" alt="Maldives" className="w-full h-full object-cover brightness-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent"></div>
         <div className="absolute bottom-12 left-6 md:left-12 max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-lg">Les Maldives</h1>

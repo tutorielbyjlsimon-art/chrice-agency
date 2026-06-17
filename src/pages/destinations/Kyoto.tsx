@@ -6,10 +6,10 @@ import { Calendar as CalendarIcon, Users, MapPin, Plane, CheckCircle, Sparkles, 
 import mockFlights from '../../mocks/mockFlights.json';
 
 const hotels = [
-  { id: 'k1', name: 'Ritz-Carlton Kyoto', stars: 5, price: 250, rating: 9.7, reviews: 815, img: './assets/kyoto_1.jpg', desc: "Design exceptionnel au bord de la rivière Kamogawa, fusionnant tradition et luxe absolu.", amenities: ['Bain Onsen intérieur privé', 'Produits de bain Asprey', 'Literie sur-mesure'] },
-  { id: 'k2', name: 'Aman Kyoto', stars: 5, price: 400, rating: 9.9, reviews: 312, img: './assets/kyoto_2.jpg', desc: "Un sanctuaire zen caché dans une forêt secrète. L'expérience Ryokan la plus exclusive du Japon.", amenities: ['Tatami traditionnel premium', 'Jardin Zen privatif', 'Immersion nature 360°'] },
-  { id: 'k3', name: 'Suiran, Luxury Collection', stars: 5, price: 180, rating: 9.4, reviews: 620, img: './assets/kyoto_3.jpg', desc: "Une retraite intime nichée dans les collines d'Arashiyama, avec bains thermaux privés.", amenities: ['Bain thermal extérieur', 'Architecture bois et papier', 'Cérémonie du thé'] },
-  { id: 'k4', name: 'Four Seasons Kyoto', stars: 5, price: 220, rating: 9.6, reviews: 450, img: './assets/kyoto_4.jpg', desc: "Un jardin ancestral de 800 ans au cœur de l'hôtel, offrant une sérénité inégalable.", amenities: ['Piscine intérieure 20m', 'Chambre vue sur le lac', 'Technologie intégrée invisible'] }
+  { id: 'k1', name: 'Ritz-Carlton Kyoto', stars: 5, price: 250, rating: 9.7, reviews: 815, img: '/chrice-agency/assets/kyoto_1.jpg', desc: "Design exceptionnel au bord de la rivière Kamogawa, fusionnant tradition et luxe absolu.", amenities: ['Bain Onsen intérieur privé', 'Produits de bain Asprey', 'Literie sur-mesure'] },
+  { id: 'k2', name: 'Aman Kyoto', stars: 5, price: 400, rating: 9.9, reviews: 312, img: '/chrice-agency/assets/kyoto_2.jpg', desc: "Un sanctuaire zen caché dans une forêt secrète. L'expérience Ryokan la plus exclusive du Japon.", amenities: ['Tatami traditionnel premium', 'Jardin Zen privatif', 'Immersion nature 360°'] },
+  { id: 'k3', name: 'Suiran, Luxury Collection', stars: 5, price: 180, rating: 9.4, reviews: 620, img: '/chrice-agency/assets/kyoto_3.jpg', desc: "Une retraite intime nichée dans les collines d'Arashiyama, avec bains thermaux privés.", amenities: ['Bain thermal extérieur', 'Architecture bois et papier', 'Cérémonie du thé'] },
+  { id: 'k4', name: 'Four Seasons Kyoto', stars: 5, price: 220, rating: 9.6, reviews: 450, img: '/chrice-agency/assets/kyoto_4.jpg', desc: "Un jardin ancestral de 800 ans au cœur de l'hôtel, offrant une sérénité inégalable.", amenities: ['Piscine intérieure 20m', 'Chambre vue sur le lac', 'Technologie intégrée invisible'] }
 ];
 
 const excursions = [
@@ -68,7 +68,7 @@ export const Kyoto = () => {
   return (
     <div className="w-full">
       <div className="relative h-[60vh] overflow-hidden mb-16 shadow-2xl">
-        <img src="./assets/dest_kyoto_1781704278607.jpg" alt="Kyoto" className="w-full h-full object-cover brightness-50" />
+        <img src="/chrice-agency/assets/dest_kyoto_1781704278607.jpg" alt="Kyoto" className="w-full h-full object-cover brightness-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent"></div>
         <div className="absolute bottom-12 left-6 md:left-12 max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-lg">Kyoto, Japon</h1>
