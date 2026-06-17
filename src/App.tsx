@@ -4,6 +4,7 @@ import { BookingProvider } from './context/BookingContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { DebugMenu } from './components/DebugMenu';
+import ScrollToTop from './components/ScrollToTop';
 import { Home } from './pages/Home';
 import { Checkout } from './pages/Checkout';
 import { Success } from './pages/Success';
@@ -24,6 +25,7 @@ function App() {
   return (
     <BookingProvider>
       <HashRouter>
+        <ScrollToTop />
         <div className="min-h-screen bg-ink flex flex-col font-sans transition-colors duration-300">
           <Navbar />
           <div className="flex-1 pt-20">
