@@ -5,12 +5,17 @@ import { useBooking } from '../context/BookingContext';
 import type { Currency } from '../context/BookingContext';
 
 export const Navbar = () => {
-  const [isLight, setIsLight] = useState(false);
+  const [isLight, setIsLight] = useState(() => localStorage.getItem('theme') === 'light');
   const { state, setCurrency } = useBooking();
 
   useEffect(() => {
-    if (isLight) document.body.classList.add('light-mode');
-    else document.body.classList.remove('light-mode');
+    if (isLight) {
+      document.body.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.body.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    }
   }, [isLight]);
 
   return (

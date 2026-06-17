@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LiveLocalStatus } from '../../components/LiveLocalStatus';
 import { useBooking } from '../../context/BookingContext';
 import type { Flight } from '../../context/BookingContext';
 import { Calendar as CalendarIcon, Users, MapPin, Plane, CheckCircle, Sparkles, Building, Map } from 'lucide-react';
@@ -74,6 +75,10 @@ export const NewYork = () => {
           <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-4 drop-shadow-lg">New York, USA</h1>
           <p className="text-2xl text-brand-500 font-bold flex items-center gap-2 drop-shadow-lg"><MapPin size={24}/> La ville qui ne dort jamais</p>
         </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 -mt-8 mb-12 relative z-10">
+        <LiveLocalStatus city="New York" timezone="America/New_York" weather="cloud" temp={15} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-16">

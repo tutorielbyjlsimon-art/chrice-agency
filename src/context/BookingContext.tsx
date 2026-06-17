@@ -48,14 +48,14 @@ interface BookingContextType {
 
 const BookingContext = createContext<BookingContextType | undefined>(undefined);
 
-export const BookingProvider = ({ children }: { children: ReactNode }) => {
+export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, setState] = useState<BookingState>({
     searchParams: null,
     selectedFlight: null,
     passengerInfo: null,
     isOffline: false,
     forcePaymentError: false,
-    currency: 'EUR'
+    currency: (localStorage.getItem('currency') as Currency) || 'EUR'
   });
 
   const setSearchParams = (params: any) => setState(prev => ({ ...prev, searchParams: params }));
@@ -63,7 +63,11 @@ export const BookingProvider = ({ children }: { children: ReactNode }) => {
   const setPassengerInfo = (info: any) => setState(prev => ({ ...prev, passengerInfo: info }));
   const toggleOffline = () => setState(prev => ({ ...prev, isOffline: !prev.isOffline }));
   const togglePaymentError = () => setState(prev => ({ ...prev, forcePaymentError: !prev.forcePaymentError }));
-  const setCurrency = (c: Currency) => setState(prev => ({ ...prev, currency: c }));
+  
+  const setCurrency = (c: Currency) => {
+    localStorage.setItem('currency', c);
+    setState(prev => ({ ...prev, currency: c }));
+  };
 
   const formatPrice = (priceInEur: number) => {
     const converted = Math.round(priceInEur * rates[state.currency]);
