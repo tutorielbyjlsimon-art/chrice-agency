@@ -33,6 +33,16 @@ export const Maldives = () => {
   const [selectedExcursions, setSelectedExcursions] = useState<string[]>([]);
   const [mealPlan, setMealPlan] = useState<number>(0);
 
+
+  useEffect(() => {
+    document.documentElement.style.setProperty('--color-brand-500', '#0ea5e9');
+    document.documentElement.style.setProperty('--color-brand-400', '#38bdf8');
+    return () => {
+      document.documentElement.style.removeProperty('--color-brand-500');
+      document.documentElement.style.removeProperty('--color-brand-400');
+    };
+  }, []);
+
   useEffect(() => {
     fetch('https://ipapi.co/json/').then(res => res.json()).then(data => { if(data.city) setUserCity(data.city); }).catch(() => {});
   }, []);
