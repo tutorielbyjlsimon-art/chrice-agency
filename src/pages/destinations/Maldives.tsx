@@ -138,7 +138,7 @@ export const Maldives = () => {
                   </div>
                   <h4 className="font-bold text-white text-lg">{exc.name}</h4>
                 </div>
-                <p className="font-bold text-brand-500">+{formatPrice(exc.price)} <span className="text-xs font-normal text-slate-400">/pers</span></p>
+                <p className="font-bold text-white">+{formatPrice(exc.price)} <span className="text-xs font-normal text-slate-400">/pers</span></p>
               </div>
             ))}
           </div>
@@ -193,7 +193,7 @@ export const Maldives = () => {
                   <div className="flex justify-between"><span className="text-slate-400">Excursions</span><span className="text-white">{formatPrice(excursionsTotal)}</span></div>
                 </div>
                 <div className="flex justify-between items-end border-t border-white/10 pt-4">
-                  <span className="font-bold text-white">Total</span><span className="text-3xl font-extrabold text-brand-500">{formatPrice(totalPrice)}</span>
+                  <span className="font-bold text-white">Total</span><span className="text-3xl font-extrabold text-white">{formatPrice(totalPrice)}</span>
                 </div>
               </div>
               

@@ -109,7 +109,7 @@ export const Success = () => {
               
               <div className="mt-8">
                 <p className="text-sm text-slate-400 mb-1 font-semibold uppercase tracking-wider">Paiement</p>
-                <p className="font-bold text-xl text-emerald-500">{formatPrice(state.selectedFlight.price)}</p>
+                <p className="font-bold text-xl text-white">{formatPrice(state.selectedFlight.price)}</p>
               </div>
             </div>
             

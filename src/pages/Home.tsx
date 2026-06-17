@@ -123,17 +123,47 @@ export const Home = () => {
               </div>
             </div>
 
-            <div className="glass flex items-center px-3 sm:px-4 py-3 rounded-2xl md:w-48">
-              <Users className="text-brand-500 mr-2 sm:mr-3 shrink-0" size={24} />
-              <div className="w-full">
-                <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Passagers</label>
-                <input type="number" min="1" defaultValue="2" className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-lg" />
+            <div className="flex flex-col md:flex-row gap-4 w-full">
+              <div className="glass flex items-center px-3 sm:px-4 py-3 rounded-2xl md:w-48">
+                <Users className="text-brand-500 mr-2 sm:mr-3 shrink-0" size={24} />
+                <div className="w-full">
+                  <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Passagers</label>
+                  <input type="number" min="1" defaultValue="2" className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-lg" />
+                </div>
               </div>
-            </div>
 
-            <button type="submit" className="bg-brand-500 text-ink px-8 py-4 rounded-2xl font-extrabold text-lg hover:bg-brand-400 transition-all hover:scale-105 flex items-center justify-center gap-2">
-              <Search size={24} /> Rechercher
-            </button>
+              {activeTab === 'hotels' && (
+                <div className="glass flex items-center px-3 sm:px-4 py-3 rounded-2xl md:w-56">
+                  <Building className="text-brand-500 mr-2 sm:mr-3 shrink-0" size={24} />
+                  <div className="w-full">
+                    <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Catégorie</label>
+                    <select className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-base [color-scheme:dark]">
+                      <option className="bg-ink text-white" value="5">Palace & 5 Étoiles</option>
+                      <option className="bg-ink text-white" value="4">Hôtel 4 Étoiles</option>
+                      <option className="bg-ink text-white" value="boutique">Boutique Hôtel</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 'voitures' && (
+                <div className="glass flex items-center px-3 sm:px-4 py-3 rounded-2xl md:w-64">
+                  <Car className="text-brand-500 mr-2 sm:mr-3 shrink-0" size={24} />
+                  <div className="w-full">
+                    <label className="block text-[10px] sm:text-xs font-bold text-slate-400">Options Véhicule</label>
+                    <select className="w-full bg-transparent text-white outline-none font-bold text-sm sm:text-base [color-scheme:dark]">
+                      <option className="bg-ink text-white" value="location">Location Voiture Luxe</option>
+                      <option className="bg-ink text-white" value="chauffeur">Chauffeur Privé</option>
+                      <option className="bg-ink text-white" value="parking">J'apporte ma voiture (Parking requis)</option>
+                    </select>
+                  </div>
+                </div>
+              )}
+
+              <button type="submit" className="bg-brand-500 text-ink px-8 py-4 rounded-2xl font-extrabold text-lg hover:bg-brand-400 transition-all hover:scale-105 flex items-center justify-center gap-2 flex-1 md:flex-none">
+                <Search size={24} /> Rechercher
+              </button>
+            </div>
           </form>
         </div>
       </section>
